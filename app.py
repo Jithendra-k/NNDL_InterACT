@@ -40,13 +40,13 @@ classes = list(classes)
 print(classes)
 #=============================================================================
 #Initialize a YOLO-World model
-model = YOLO('yolov8s-worldv2.pt').to(device)  # or choose yolov8m/l-world.pt
+model = YOLO('./Build_Yolo-Agent/yolov8s-worldv2.pt').to(device)  # loading model weights
 
 # Define custom classes
 model.set_classes(classes)
 
 # Execute prediction for specified categories on an image
-results = model.predict('test-room.jpeg')
+results = model.predict('./Build_Yolo-Agent/test-room.jpeg')
 
 # Show results
 results[0].show()
